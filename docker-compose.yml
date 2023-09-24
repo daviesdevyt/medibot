@@ -1,0 +1,31 @@
+version: "3.9"
+
+volumes:
+  medi_bot_postgres_data: {}
+
+services:
+  django:
+    image: medi_bot_django
+    container_name: medi_bot_django
+    build:
+      context: .
+      dockerfile: ./compose/django/Dockerfile
+    platform: linux/x86_64
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    command: /build
+
+  postgres:
+    build:
+      context: .
+      dockerfile: ./compose/postgres/Dockerfile
+    image: medi_bot_postgres
+    container_name: medi_bot_postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - .env
