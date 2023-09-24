@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from rest_framework.response import Response
 from rest_framework.views import APIView
+
 from . import serializers
+
 # Create your views here.
 
-from rest_framework.response import Response
 
 class SignupUserView(APIView):
     serializer_class = serializers.UserSerializer
