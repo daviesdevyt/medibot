@@ -18,7 +18,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app"]
 
 SITE_ID = 1
 ACCOUNT_EMAIL_VERIFICATION = "none"
@@ -48,10 +48,6 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "dj_rest_auth.jwt_auth.JWTCookieAuthentication",
     ),
-    "DEFAULT_SCHEMA_CLASS": "drf_yasg.inspectors.SwaggerAutoSchema",
-}
-SWAGGER_SETTINGS = {
-    "DEFAULT_INFO": "medibot.urls.swagger_info",
 }
 
 REST_AUTH = {
