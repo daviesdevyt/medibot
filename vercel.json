@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "medibot/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "medibot/wsgi.py"
+    }
+  ]
+}
