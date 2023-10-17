@@ -22,6 +22,7 @@ ALLOWED_HOSTS = ["*"]
 
 SITE_ID = 1
 ACCOUNT_EMAIL_VERIFICATION = "none"
+CORS_ORIGIN_ALLOW_ALL = DEBUG
 
 # Application definition
 
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     "dj_rest_auth.registration",
     "drf_yasg",
     "user",
+    "corsheaders"
 ]
 
 REST_FRAMEWORK = {
@@ -64,6 +66,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = "medibot.urls"
