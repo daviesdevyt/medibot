@@ -18,8 +18,19 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
-
+ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app", "localhost"]
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:5500",
+    "https://medibot-three.vercel.app",
+]
+CORS_ALLOW_METHODS = (
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+)
 SITE_ID = 1
 ACCOUNT_EMAIL_VERIFICATION = "none"
 CORS_ORIGIN_ALLOW_ALL = DEBUG
@@ -43,7 +54,7 @@ INSTALLED_APPS = [
     "dj_rest_auth.registration",
     "drf_yasg",
     "user",
-    "corsheaders"
+    "corsheaders",
 ]
 
 REST_FRAMEWORK = {
@@ -60,13 +71,13 @@ REST_AUTH = {
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = "medibot.urls"
