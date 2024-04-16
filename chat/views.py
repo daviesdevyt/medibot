@@ -11,6 +11,6 @@ class PromptRequestView(GenericAPIView):
 
     def post(self, request, *args, **kwargs):
         response = openai.ChatCompletion.create(
-            model="text-davinci-003", prompt=request.data
+            model="gpt-4", messages=request.data.get("messages")
         )
         return Response(response)
