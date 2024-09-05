@@ -22,6 +22,8 @@ ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app", "localhost"]
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5500",
     "https://medibot-three.vercel.app",
+    "https://leeds.com.ng"
+    "https://www.leeds.com.ng"
 ]
 CORS_ALLOW_METHODS = (
     "DELETE",
@@ -33,7 +35,7 @@ CORS_ALLOW_METHODS = (
 )
 SITE_ID = 1
 ACCOUNT_EMAIL_VERIFICATION = "none"
-CORS_ORIGIN_ALLOW_ALL = DEBUG
+# CORS_ORIGIN_ALLOW_ALL = DEBUG
 
 # Application definition
 
