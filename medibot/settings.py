@@ -18,11 +18,11 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app", "localhost"]
+ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app", "localhost", "172.105.250.131"]
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5500",
     "https://medibot-three.vercel.app",
-    "https://leeds.com.ng"
+    "https://leeds.com.ng",
     "https://www.leeds.com.ng"
 ]
 CORS_ALLOW_METHODS = (
@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     "drf_yasg",
     "user",
     "corsheaders",
+    "chat"
 ]
 
 REST_FRAMEWORK = {
